@@ -250,8 +250,8 @@
 				if (tags) {
 					tags.map(function(tag) {
 						if (typeof text != 'undefined'
-								&& tags.indexOf(name.toLowerCase()) > -1)
-							text = text.replace(RegExp('@' + tag, 'gi'),'<span class="tag">@' + tag + '</span>');
+								&& tag == name.toLowerCase())
+							text = text.replace(RegExp('@' + tag, 'gi'),'<span class="tag">@' + name + '</span>');
 					});
 				}
 				$('<div'+(nick==name ? ' class="me"' : '')+'/>').html(text).prepend($('<b/>').text('[' + nick + ']: ')).appendTo($('#messagesDiv'));
